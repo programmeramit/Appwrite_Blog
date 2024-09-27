@@ -6,6 +6,7 @@ export class AuthService{
     constructor(){
         this.client.setEndpoint(config.appwriteurl).setProject(config.projectid)
         this.account = new Account(this.client)
+        console.log(this.account)
     }
     async createAccount(email,password,name){
 
@@ -30,9 +31,9 @@ export class AuthService{
             return error 
         }
     }
-    async curentUser(){
+     async curentUser(){
         try{
-            return await this.account.get();
+            return await this.account.get()
         }catch (error){
             throw error;
         }
