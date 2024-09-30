@@ -3,6 +3,8 @@ import config from './config/config'
 import authService from './appwrite/auth'
 import { useDispatch } from 'react-redux'
 import { login,logout } from './redux/auth'
+import Loader from './component/Loader'
+import HomePage from './component/HomePage'
 function App() {
     const [loading,isloading]  = useState(true)
     const dispatch = useDispatch()
@@ -22,7 +24,7 @@ function App() {
 
 
 
-  return loading ? (<div>loading</div>):(<h2>you are not logged in</h2>)
+  return loading ? (<Loader/>):(<HomePage/>)
 }
 
 export default App
